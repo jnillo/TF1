@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213122832) do
+ActiveRecord::Schema.define(:version => 20130220121203) do
+
+  create_table "recipes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -30,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20130213122832) do
     t.string   "last_sign_in_ip"
     t.integer  "sign_in_count",                         :default => 0,     :null => false
     t.boolean  "saw_tracking_codes",                    :default => false
+    t.integer  "user_type",                             :default => 0,     :null => false
+    t.string   "description"
+    t.string   "image"
   end
 
 end

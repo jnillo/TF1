@@ -1,4 +1,4 @@
-StartupTool::Application.routes.draw do
+MesaParaUno::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -59,7 +59,7 @@ StartupTool::Application.routes.draw do
   devise_scope :user do
     get '/sign_in', to: 'devise/sessions#new', as: 'new_user_session'
     post '/sign_in', to: 'devise/sessions#create', as: 'user_session'
-    delete '/sign_out', to: 'devise/sessions#destroy', as: 'destroy_user_session'
+    get '/sign_out', to: 'devise/sessions#destroy', as: 'destroy_user_session'
     get '/sign_up', to: 'devise/registrations#new', as: 'new_user_registration'
   end
 

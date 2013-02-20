@@ -1,24 +1,48 @@
-<h2>Sign up</h2>
+<div class="span3">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Image</li>
+      <li>IMAGE</li>
+    </ul>
+  </div><!--/.well -->
+</div><!--/span-->
+<div class="span9">
+  <h2>Sign up</h2>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <div div="span4"><%= f.label :first_name %><br />
+      <%= f.text_field :first_name, :autofocus => true %></div>
 
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name, :autofocus => true %></div>
+      <div div="span4"><%= f.label :last_name %><br />
+      <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name %></div>
+      <div div="span4">
+        <%= f.label :email, :class => "control-label" %><br />
+        <div class="controls">
+          <span class="add_on"><i class="icon-envelope"></i></span>
+          <%= f.email_field :email, :autofocus => true, :class=>"inputIcon" %>
+        </div>
+      </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+      <div div="span4"><%= f.label :user_type, "Tipo de usuario:" %><br />
+      <%= f.select :user_type, :Amateur => 0, :Profesional => 1 %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+      <div div="span4"><%= f.label :description, "Descripción:" %><br />
+      <%= f.text_area :description, :autofocus => true, :cols => "500", :rows => "20" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div div="span4">
+        <%= f.label :password, :class => "control-label" %>
+        <div class="controls">
+          <span class="add_on"><i class="icon-lock"></i></span>
+          <%= f.password_field :password , :autofocus => true, :class=>"inputIcon" %>
+        </div>
+      </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <div div="span4"><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
 
-<%= render "devise/shared/links" %>
+      <div div="span4"><%= f.submit "Sign up" %></div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

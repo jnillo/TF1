@@ -17,6 +17,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
       t.integer  :sign_in_count, :default => 0,     :null => false
       t.boolean  :saw_tracking_codes, :default => false
+      t.integer :user_type, :default => 0, :null => false
+      t.string :description
+      t.string :image
 
       t.timestamps
     end
