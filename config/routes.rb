@@ -1,4 +1,6 @@
 MesaParaUno::Application.routes.draw do
+  get "users/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,6 +52,8 @@ MesaParaUno::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
+  match 'dashboard' => 'users#dashboard'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
@@ -62,5 +66,7 @@ MesaParaUno::Application.routes.draw do
     get '/sign_out', to: 'devise/sessions#destroy', as: 'destroy_user_session'
     get '/sign_up', to: 'devise/registrations#new', as: 'new_user_registration'
   end
+
+  resources :users
 
 end

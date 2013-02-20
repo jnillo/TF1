@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    resource.sign_in_count <= 1 ? root_path : "/"
+    resource.sign_in_count <= 1 ? '/welcome' : '/dashboard'
   end
 end

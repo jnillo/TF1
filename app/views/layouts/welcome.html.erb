@@ -42,14 +42,13 @@
           <div class="span3">
             <a class="brand" href="#">MesaParaUno</a>
           </div>
-          <div class="span8"></div>
-          <div class="span1">
+          <div class="span6"></div>
+          <div class="span3">
             <div class="container-fluid nav-collapse">
               <ul class="nav">
                 <% if user_signed_in?%>
                 <li><%= link_to "Logout", "/sign_out"  %></li>
-                <li>/</li>
-                <li>Mi Cuenta</li>
+                <li><a href="/my_account"><i class="icon-home icon-white"></i>Mi Cuenta</a></li>
                 <% else %>
                 <li><%= link_to "Login", "/sign_in"  %></li>
                 <% end %>
@@ -60,12 +59,10 @@
       </div>
     </div>
 
-    <div class="container-fluid">
+    <div id="content">
       <div class="row-fluid">
-        <div class="span12">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
       </div><!--/row-->
 
       <footer class="footer">
