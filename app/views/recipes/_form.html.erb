@@ -1,0 +1,46 @@
+<div class="row-fluid">
+  <%= form_for @recipe do |f| %>
+  <div class="span4">
+    <div >
+      <%= f.label :title, :class => "control-label" %><br />
+      <div class="controls">
+        <%= f.text_field :title, :autofocus => true %>
+      </div>
+    </div>
+    <div>
+      <%= f.label :type_recipe, :class => "control-label" %><br />
+      <div class="controls">
+        <%= f.select :type_recipe, types_recipe,:autofocus => true %>
+      </div>
+    </div>
+    <div div="span4">
+      <%= f.label :title, :class => "control-label" %><br />
+      <div class="controls">
+        <%= f.text_field :title, :autofocus => true %>
+      </div>
+    </div>
+
+
+    <p class="leads"><strong>Ingredientes</strong></p>
+    <div>
+      <% f.fields_for :ingredients do |i| -%>
+      <%= render :partial => 'ingredient', :locals => { :f => i } %>
+      <% end -%>
+    </div>
+    <p><%= add_ingredient_link "+ ingrediente", :ingredients %></p>
+    <%= new_child_fields_template f, :ingredients %>
+
+  </div>
+  <div class="span5">
+    <div>
+      <%= f.label :url, :class => "control-label" %><br />
+      <div class="controls">
+        <%= f.text_field :url, :autofocus => true %>
+      </div>
+    </div>
+  </div>
+  <div class="span9"><hr />
+    <%= f.submit "Guardar",:class=>"btn"%>
+  </div>
+  <%end %>
+</div>

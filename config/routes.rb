@@ -53,6 +53,7 @@ MesaParaUno::Application.routes.draw do
   root :to => 'welcome#index'
 
   match 'dashboard' => 'users#dashboard'
+  match 'nueva_receta' => 'recipes#new'
 
   # See how all your routes lay out with "rake routes"
 
@@ -68,5 +69,6 @@ MesaParaUno::Application.routes.draw do
   end
 
   resources :users
+  resources :recipes
 
 end

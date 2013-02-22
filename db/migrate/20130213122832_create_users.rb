@@ -21,6 +21,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :description
       t.string :image
 
+      t.references :recipe
+
       t.timestamps
     end
   end

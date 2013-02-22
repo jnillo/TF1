@@ -42,13 +42,16 @@
           <div class="span3">
             <a class="brand" href="#">MesaParaUno</a>
           </div>
-          <div class="span6"></div>
-          <div class="span3">
+          <div class="span7">
+            <div class="text-right">
+              <%= link_to "Publicar receta", "/nueva_receta", :class => "btn btn-danger" %>
+            </div>
+          </div>
+          <div class="span2">
             <div class="container-fluid nav-collapse">
               <ul class="nav">
                 <% if user_signed_in?%>
                 <li><%= link_to "Logout", "/sign_out"  %></li>
-                <li><a href="/my_account"><i class="icon-home icon-white"></i>Mi Cuenta</a></li>
                 <% else %>
                 <li><%= link_to "Login", "/sign_in"  %></li>
                 <% end %>
@@ -63,7 +66,8 @@
       <div class="row-fluid">
         <div class="span3">
           <%= render :partial => 'users/user_info' %>
-          <%= render :partial => 'users/side_navigation'%>
+          <hr />
+          <%= render :partial => 'users/side_navigation' %>
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>

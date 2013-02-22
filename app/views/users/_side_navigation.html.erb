@@ -1,8 +1,9 @@
-<div class="well sidebar-nav">
-  <ul class="nav nav-list">
-    <li class="nav-header">Sidebar</li>
-    <li><%= link_to "Mis recetas", "/path1"  %></li>
-    <li><%= link_to "Mis canales", "/path2"  %></li>
-    <li><%= link_to "Mis datos", "/path3"  %></li>
+<div class="sidebar-nav">
+  <ul class="nav nav-tabs nav-stacked">
+    <li class="active"><span><i class="icon-fire"></i><%= link_to "Mi cocina", "#mi_perfil"  %></span></li>
+    <li><span><i class="icon-ok-sign"></i><%= link_to "Sugerencia del día", "#sugerencia_dia"  %></span></li>
+    <li><span><i class="icon-search"></i><%= link_to "Buscador de recetas", "#buscador"  %></span></li>
+    <li><span><i class="icon-star"></i><%= link_to "Chefs", "#chefs"  %></span></li>
+    <li><span><i class="icon-bell"></i><%= link_to "Concursos", "#concursos"  %></span></li>
   </ul>
 </div><!--/.well -->
